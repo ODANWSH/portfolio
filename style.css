@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e3c697;
+  padding: 15px;
+  position: relative;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  height: 3px;
+  width: 25px;
+  background-color: #2e1f77;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Masquer la case à cocher */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive burger menu */
+@media (max-width: 425px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px; /* Positionné juste en dessous du bouton burger */
+    left: 0; /* Aligné à gauche sous le bouton burger */
+    width: 200px;
+    background-color: #2e1f77;
+    flex-direction: column;
+    display: none;
+    padding: 15px;
+    z-index: 1;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  #menu-toggle:checked + label .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + label .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + label .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    color: #e3c697;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .nav-links a:hover {
+    background-color: #2e1f77;
+  }
+}
+
+p {
+  display: inline-block; /* Aligne le texte avec le cercle */
+  vertical-align: middle; /* Aligne verticalement le texte au milieu par rapport au cercle */
+}
+
+.left {
+  text-align: left;
+}
+
+.beige {
+  color: #e3c697;
+}
+
+.blue {
+  color: #2e1f77;
+}
+
+.center {
+  text-align: center;
+}
+
+.image {
+  background-image: url(images/richat_landsat7.jpg);
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Important pour positionner les éléments à l'intérieur */
+}
+
+.white {
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments en colonne */
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Positionne le container à l'intérieur de l'image */
+  top: 50%; /* Centré verticalement */
+  left: 50%; /* Centré horizontalement */
+  transform: translate(-50%, -50%); /* Permet de centrer exactement */
+}
+
+.moncercle {
+  background: #bfd70e;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  border: 2px solid #679403;
+}
+
+h2 {
+  margin-top: 20px; /* Espace entre le cercle et le texte */
+  font-size: 24px;
+}
+.background-beige {
+  background-color: #e3c697;
+}
+.background-blue {
+  background-color: #2e1f77;
+}
+.vert {
+  color: #275b09;
+}
+.margin {
+  margin: 5px;
+}
+.margin-top {
+  margin-top: 5px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 150px;
+  height: 40px;
+}
+.gray-blue {
+  background-color: #c9cbd9;
+}
+.parcours-container {
+  display: grid;
+  grid-template-columns: 150px 30px 1fr; /* Trois colonnes: date, cercle, description */
+  align-items: center;
+  gap: 10px 20px; /* Espace entre les éléments */
+}
+
+.parcours {
+  display: contents; /* Permet aux enfants d'être dans le layout grid */
+}
+
+.date {
+  white-space: nowrap; /* Pour éviter que les dates se coupent sur plusieurs lignes */
+}
+
+.monminicercle {
+  background: #e3c697;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2e1f77;
+  display: inline-block;
+}
+
+.right-text {
+  word-wrap: break-word;
+}
+.line {
+  border: 2px solid #2e1f77;
+}
+ul {
+  list-style-type: disc;
+  margin-left: 30px;
+}
